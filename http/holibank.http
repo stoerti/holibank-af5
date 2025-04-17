@@ -1,0 +1,12 @@
+
+### Create account
+PUT localhost:8080/account/
+Content-Type: application/json
+
+{
+  "firstname": "John",
+  "lastname": "Doe"
+}
+
+### Get account balance
+GET localhost:8080/account/caca0590-8a84-4db7-ae61-16dc440e870b/balance
