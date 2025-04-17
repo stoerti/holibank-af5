@@ -12,12 +12,16 @@ import java.util.List;
 public class HolibankAxonConfiguration {
 
     @Bean
-    public AxonConfiguration axonConfiguration(List<AxonConfigurer> configurers) {
+    public EventSourcingConfigurer eventSourcingConfigurer(List<AxonConfigurer> configurers) {
         var configurer = EventSourcingConfigurer.create();
         for (AxonConfigurer axonConfigurer : configurers) {
             axonConfigurer.configure(configurer);
         }
+        return configurer;
+    }
 
+    @Bean
+    public AxonConfiguration axonConfiguration(EventSourcingConfigurer configurer) {
         return configurer.start();
     }
 

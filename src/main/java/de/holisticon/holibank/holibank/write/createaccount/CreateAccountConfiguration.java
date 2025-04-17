@@ -22,8 +22,4 @@ public class CreateAccountConfiguration implements AxonConfigurer {
 
         configurer.registerStatefulCommandHandlingModule(commandHandlingModule);
     }
-
-    private CreateAccountConfiguration() {
-        // Prevent instantiation
-    }
 }
